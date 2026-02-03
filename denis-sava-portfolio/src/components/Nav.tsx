@@ -24,26 +24,45 @@ export function Nav() {
   return (
     <>
       {/* Desktop nav (top-right, minimal) */}
-      <nav className="pointer-events-auto fixed right-6 top-6 z-40 hidden select-none md:block">
-        <ul className="space-y-1 text-[11px] uppercase tracking-[0.22em] text-foreground/70">
-          {items.map((it) => {
-            const active = pathname === it.href;
-            return (
-              <li key={it.href}>
-                <Link
-                  className={cn(
-                    "transition-colors hover:text-foreground",
-                    active && "text-foreground"
-                  )}
-                  href={it.href}
-                >
-                  {it.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+      {pathname === "/" ? null : (
+        <nav className="pointer-events-auto fixed right-6 top-6 z-40 hidden select-none md:block">
+          <ul className="space-y-1 text-right text-[11px] uppercase tracking-[0.22em] text-foreground/70">
+            {items.map((it) => {
+              const active = pathname === it.href;
+              return (
+                <li key={it.href}>
+                  <Link
+                    className={cn(
+                      "group inline-flex w-full items-center justify-end gap-4 py-1",
+                      active && "text-foreground"
+                    )}
+                    href={it.href}
+                  >
+                    <span
+                      className={cn(
+                        "h-px bg-foreground/70 transition-all duration-300",
+                        active
+                          ? "w-32 opacity-100"
+                          : "w-0 opacity-0 group-hover:w-32 group-hover:opacity-100"
+                      )}
+                    />
+                    <span
+                      className={cn(
+                        "transition-colors",
+                        active
+                          ? "text-foreground"
+                          : "text-foreground/70 group-hover:text-foreground"
+                      )}
+                    >
+                      {it.label}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      )}
 
       {/* Mobile nav */}
       <div className="fixed right-4 top-4 z-50 md:hidden">

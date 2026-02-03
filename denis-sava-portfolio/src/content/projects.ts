@@ -19,12 +19,13 @@ export const categoryMeta: Record<
 };
 
 const placeholder = "/projects/placeholder.svg";
+const comingSoon = "/coming.webp";
 
 export const projects: Project[] = [
   {
     slug: "grooming-pet",
     category: "graphic",
-    title: "Grooming Pet Redesign",
+    title: "Grooming Pet Logo Design",
     description:
       "Brand and visual redesign materials.",
     year: "2024",
@@ -42,24 +43,24 @@ export const projects: Project[] = [
   {
     slug: "sample-landing-page",
     category: "web",
-    title: "Sample Landing Page",
+    title: "Coming Soon",
     description: "A minimal landing page concept with strong typography.",
     year: "2026",
     role: "Designer",
     tags: ["Web", "Art Direction"],
-    coverImage: placeholder,
-    images: [placeholder, placeholder],
+    coverImage: comingSoon,
+    images: [comingSoon],
   },
   {
     slug: "sample-product-ui",
     category: "uiux",
-    title: "Sample Product UI",
+    title: "Coming Soon",
     description: "A product UI exploration with component-driven layout.",
     year: "2026",
     role: "UI/UX Designer",
     tags: ["UI/UX", "Design System"],
-    coverImage: placeholder,
-    images: [placeholder, placeholder, placeholder, placeholder],
+    coverImage: comingSoon,
+    images: [comingSoon],
   },
 ];
 
