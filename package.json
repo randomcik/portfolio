@@ -1,0 +1,12 @@
+{
+  "name": "denis-sava-portfolio-root",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm --prefix \"denis-sava-portfolio\" install",
+    "dev": "npm --prefix \"denis-sava-portfolio\" run dev",
+    "build": "npm --prefix \"denis-sava-portfolio\" run build",
+    "start": "npm --prefix \"denis-sava-portfolio\" run start",
+    "lint": "npm --prefix \"denis-sava-portfolio\" run lint"
+  }
+}
+
