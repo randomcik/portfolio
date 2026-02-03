@@ -27,14 +27,16 @@ export const projects: Project[] = [
     title: "Grooming Pet Redesign",
     description:
       "Brand and visual redesign materials.",
-    year: "2026",
+    year: "2024",
     role: "Designer",
     tags: ["Graphic Design", "Branding"],
-    coverImage: "/projects/graphic/Grooming Pet Redesign S 5.jpg",
+    coverImage: "/projects/graphic/grooming-pet/Grooming Pet S1.webp",
     images: [
-      "/projects/graphic/Grooming Pet Redesign S 4.jpg",
-      "/projects/graphic/Grooming Pet Redesign S 5.jpg",
-      "/projects/graphic/Grooming Pet Redesign S 6.jpg",
+      "/projects/graphic/grooming-pet/Grooming Pet S1.webp",
+      "/projects/graphic/grooming-pet/Grooming Pet S2.webp",
+      "/projects/graphic/grooming-pet/Grooming Pet S3.webp",
+      "/projects/graphic/grooming-pet/Grooming Pet S4.webp",
+      "/projects/graphic/grooming-pet/Grooming Pet S5.webp",
     ],
   },
   {
