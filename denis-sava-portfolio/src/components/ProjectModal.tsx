@@ -6,9 +6,11 @@ import type { Project } from "@/types/project";
 
 export function ProjectModal({
   project,
+  initialIndex = 0,
   onClose,
 }: {
   project: Project | null;
+  initialIndex?: number;
   onClose: () => void;
 }) {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
@@ -34,15 +36,21 @@ export function ProjectModal({
 
     if (project) {
       if (!dialog.open) dialog.showModal();
-      // Reset scroll to first image when opening
+      // Scroll to requested image when opening
       requestAnimationFrame(() => {
-        scrollerRef.current?.scrollTo({ left: 0, behavior: "auto" });
+        const scroller = scrollerRef.current;
+        if (!scroller) return;
+        const children = Array.from(scroller.children) as HTMLElement[];
+        const idx = Math.max(0, Math.min(children.length - 1, initialIndex));
+        const target = children[idx];
+        if (!target) return;
+        scroller.scrollTo({ left: target.offsetLeft, behavior: "auto" });
       });
       return;
     }
 
     if (dialog.open) dialog.close();
-  }, [project]);
+  }, [project, initialIndex]);
 
   useEffect(() => {
     const dialog = dialogRef.current;

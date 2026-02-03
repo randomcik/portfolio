@@ -13,14 +13,23 @@ export function generateStaticParams() {
   return [{ category: "graphic" }, { category: "web" }, { category: "uiux" }];
 }
 
-export function generateMetadata({ params }: { params: Params }) {
-  if (!isCategory(params.category)) return {};
-  return { title: categoryMeta[params.category].title };
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { category } = await params;
+  if (!isCategory(category)) return {};
+  return { title: categoryMeta[category].title };
 }
 
-export default function PortfolioCategoryPage({ params }: { params: Params }) {
-  if (!isCategory(params.category)) notFound();
-  const category = params.category;
+export default async function PortfolioCategoryPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { category } = await params;
+  if (!isCategory(category)) notFound();
   const meta = categoryMeta[category];
   const items = getProjectsByCategory(category);
 

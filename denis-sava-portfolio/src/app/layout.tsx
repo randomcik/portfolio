@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
+import PrismBackground from "@/components/PrismBackground";
 
 const fontSans = Inter({
   variable: "--font-sans",
@@ -39,6 +40,17 @@ export default function RootLayout({
         className="min-h-dvh bg-background text-foreground antialiased"
         suppressHydrationWarning
       >
+        <div className="fixed inset-0 -z-10">
+          <PrismBackground
+            className="opacity-[0.12]"
+            animationType="3drotate"
+            noise={0.25}
+            glow={1}
+            bloom={1}
+            timeScale={0.35}
+            suspendWhenOffscreen
+          />
+        </div>
         <Nav />
         <main className="min-h-dvh">{children}</main>
       </body>

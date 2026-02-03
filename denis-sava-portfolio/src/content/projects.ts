@@ -22,16 +22,20 @@ const placeholder = "/projects/placeholder.svg";
 
 export const projects: Project[] = [
   {
-    slug: "sample-brand-system",
+    slug: "grooming-pet",
     category: "graphic",
-    title: "Sample Brand System",
+    title: "Grooming Pet Redesign",
     description:
-      "Replace this with your real project. Add multiple images to showcase the work.",
+      "Brand and visual redesign materials.",
     year: "2026",
     role: "Designer",
-    tags: ["Branding", "Identity"],
-    coverImage: placeholder,
-    images: [placeholder, placeholder, placeholder],
+    tags: ["Graphic Design", "Branding"],
+    coverImage: "/projects/graphic/Grooming Pet Redesign S 5.jpg",
+    images: [
+      "/projects/graphic/Grooming Pet Redesign S 4.jpg",
+      "/projects/graphic/Grooming Pet Redesign S 5.jpg",
+      "/projects/graphic/Grooming Pet Redesign S 6.jpg",
+    ],
   },
   {
     slug: "sample-landing-page",
